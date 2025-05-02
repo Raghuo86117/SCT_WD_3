@@ -8,24 +8,18 @@
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </head>
 <body>
-
-  <!-- Start Screen -->
   <div id="start-screen" class="screen">
     <h1>Tic Tac Toe</h1>
     <p>Select Game Mode</p>
     <button onclick="startGame('pvp')">Player vs Player</button>
     <button onclick="startGame('pvc')">Player vs Computer</button>
   </div>
-
-  <!-- Name Input Screen -->
   <div id="name-input-screen" class="screen hidden">
     <h2>Enter Player Names</h2>
     <input type="text" id="playerX" placeholder="Player X Name" />
     <input type="text" id="playerO" placeholder="Player O Name" />
     <button onclick="submitNames()">Start Game</button>
   </div>
-
-  <!-- Game Screen -->
   <div id="game-screen" class="screen hidden">
     <h1>Tic Tac Toe</h1>
     <p id="turn">X's Turn</p>
@@ -49,8 +43,6 @@
     <button id="viewLeaderboardBtn">View Leaderboard</button>
     <button onclick="location.reload()">Change Mode</button>
   </div>
-
-  <!-- Leaderboard Screen -->
   <div id="leaderboard-screen" class="screen hidden">
     <h2>🏆 Leaderboard</h2>
     <table>
@@ -64,8 +56,6 @@
     </table>
     <button id="backToGameBtn">Back to Game</button>
   </div>
-
-  <!-- Sounds -->
   <audio id="clickSound" src="click.mp3"></audio>
   <audio id="winSound" src="win.mp3"></audio>
   <audio id="drawSound" src="draw.mp3"></audio>
