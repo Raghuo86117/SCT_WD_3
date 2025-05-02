@@ -35,15 +35,11 @@ const winPatterns = [
     [0,3,6], [1,4,7], [2,5,8],
     [0,4,8], [2,4,6]
 ];
-
-// Navigation
 function startGame(mode) {
     gameMode = mode;
     startScreen.classList.add("hidden");
     nameInputScreen.classList.remove("hidden");
 }
-
-// Name submit
 function submitNames() {
     playerXName = document.getElementById("playerX").value || "Player X";
     playerOName = gameMode === "pvc" ? "Computer" : (document.getElementById("playerO").value || "Player O");
@@ -55,8 +51,6 @@ function submitNames() {
     updateTurnDisplay();
     resetGame();
 }
-
-// Button events
 restartBtn.addEventListener("click", resetGame);
 viewLeaderboardBtn.addEventListener("click", showLeaderboard);
 backToGameBtn.addEventListener("click", () => {
@@ -174,8 +168,6 @@ function saveScores() {
     localStorage.setItem("scoreO", scoreO);
     localStorage.setItem("draws", draws);
 }
-
-// AI Move
 function getBestMove() {
     let bestScore = -Infinity;
     let move;
@@ -221,8 +213,6 @@ function minimax(board, depth, isMaximizing) {
         return best;
     }
 }
-
-// Flying Emojis
 function launchEmojis(emojiList) {
     for (let i = 0; i < 20; i++) {
         const emoji = document.createElement("div");
@@ -234,8 +224,6 @@ function launchEmojis(emojiList) {
         setTimeout(() => emoji.remove(), 2000);
     }
 }
-
-// Leaderboard
 function showLeaderboard() {
     leaderboardScreen.classList.remove("hidden");
     gameScreen.classList.add("hidden");
